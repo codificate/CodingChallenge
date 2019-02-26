@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/mobile_navigation">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@id/itemsListFragment">
     <fragment
             android:id="@+id/itemsListFragment"
-            android:name="com.resocoder.forecastmvvm.ui.weather.future.list.FutureListWeatherFragment"
-            android:label="future_list_weather_fragment"
-            tools:layout="@layout/items_list_fragment" >
-        <action
-                android:id="@+id/actionDetail"
-                app:destination="@id/futureDetailWeatherFragment" />
-    </fragment>
-    <fragment
-            android:id="@+id/itemDetailFragment"
-            android:name="com.resocoder.forecastmvvm.ui.weather.future.detail.FutureDetailWeatherFragment"
-            android:label="future_detail_weather_fragment"
-            tools:layout="@layout/future_detail_weather_fragment" >
-        <argument
-                android:name="dateString"
-                app:argType="string" />
-    </fragment>
+            android:name="com.globallogic.codechallenge.ui.items.list.ItemListFragment"
+            android:label="items_list_fragment"
+            tools:layout="@layout/items_list_fragment" />
 
 </navigation>
