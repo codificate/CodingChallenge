@@ -8,6 +8,17 @@
             android:id="@+id/itemsListFragment"
             android:name="com.globallogic.codechallenge.ui.items.list.ItemListFragment"
             android:label="items_list_fragment"
-            tools:layout="@layout/items_list_fragment" />
+            tools:layout="@layout/items_list_fragment">
+        <action android:id="@+id/actionDetail"
+                app:destination="@+id/detailItemFragment"/>
+    </fragment>
+    <fragment android:id="@+id/detailItemFragment"
+              android:name="com.globallogic.codechallenge.ui.items.detail.DetailItemFragment"
+              android:label="item_detail"
+              tools:layout="@layout/item_detail">
+        <argument
+            android:name="itemValues"
+            app:argType="string"/>
+    </fragment>
 
 </navigation>

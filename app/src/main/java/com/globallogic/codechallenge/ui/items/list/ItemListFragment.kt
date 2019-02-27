@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.globallogic.codechallenge.R
 import com.globallogic.codechallenge.ui.base.ScopedFragment
+import com.google.gson.Gson
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.items_list_fragment.*
@@ -43,7 +44,7 @@ class ItemListFragment : ScopedFragment(), KodeinAware {
 
         (activity as AppCompatActivity)?.supportActionBar?.title = (activity as AppCompatActivity).getString(R.string.tool_bar_main_title)
 
-        val itemsEntries = viewModel.fetchListItems.await()//viewModel.itemList.await()
+        val itemsEntries = viewModel.fetchListItems.await()
 
         itemsEntries.observe( this@ItemListFragment, Observer {
             if (it == null) return@Observer
@@ -64,7 +65,9 @@ class ItemListFragment : ScopedFragment(), KodeinAware {
         }
 
         groupAdapter.setOnItemClickListener { item, view ->
-            Toast.makeText(activity, (item as ItemViewHolder)?.itemEntry.description , Toast.LENGTH_LONG).show()
+            val itemValues = Gson().toJson((item as ItemViewHolder).itemEntry)
+            val actionDetail = ItemListFragmentDirections.actionDetail(itemValues)
+            Navigation.findNavController(view).navigate(actionDetail)
         }
     }
 

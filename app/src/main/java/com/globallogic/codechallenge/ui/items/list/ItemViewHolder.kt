@@ -5,7 +5,7 @@ import com.globallogic.codechallenge.data.db.entity.ItemEntry
 import com.globallogic.codechallenge.internal.glide.GlideApp
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
-import kotlinx.android.synthetic.main.item_detail.*
+import kotlinx.android.synthetic.main.item_row.*
 
 class ItemViewHolder(
     val itemEntry: ItemEntry
@@ -18,7 +18,7 @@ class ItemViewHolder(
         }
     }
 
-    override fun getLayout() = R.layout.item_detail
+    override fun getLayout() = R.layout.item_row
 
     private fun ViewHolder.setTitle(){
         textView_title.text = itemEntry.title

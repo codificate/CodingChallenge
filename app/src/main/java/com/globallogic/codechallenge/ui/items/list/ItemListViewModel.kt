@@ -8,10 +8,6 @@ class ItemListViewModel(
     private val codeChallengeRepository: CodingChallengeRepository
 ) : ViewModel() {
 
-    /*val itemList by lazyDeferred {
-        codeChallengeRepository.getAllItemsFromDb()
-    }*/
-
     val fetchListItems by lazyDeferred {
         codeChallengeRepository.fetchAllItems()
     }

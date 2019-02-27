@@ -1,55 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:minHeight="?listPreferredItemHeightLarge"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:cardCornerRadius="4dp">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.items.detail.DetailItemFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:fitsSystemWindows="true"
+            android:layout_height="@dimen/app_bar_height"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:minHeight="?listPreferredItemHeightLarge">
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-        <ImageView
-                android:id="@+id/imageView_item"
-                android:layout_width="@dimen/image_standar_size"
-                android:layout_height="@dimen/image_standar_size"
-                android:scaleType="fitCenter"
-                tools:srcCompat="@tools:sample/avatars"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintVertical_bias="0.0"/>
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:fitsSystemWindows="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-        <TextView
-                android:id="@+id/textView_title"
-                tools:text="Laptop 1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="@+id/imageView_item"
-                app:layout_constraintStart_toEndOf="@+id/imageView_item"
-                android:layout_marginStart="8dp"/>
-        <TextView
-                android:id="@+id/textView_description"
-                tools:text="@string/item_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/textView_title"
-                app:layout_constraintStart_toStartOf="@+id/textView_title"
-                android:ellipsize="end"
-                android:maxLines="3"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.0" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbarItem_detail_title"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_width="match_parent"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"/>
+            <ImageView
+                    android:id="@+id/image_item_detail_collapsed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    tools:background="@tools:sample/backgrounds/scenic[8]"/>
 
-</com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_scrolling"/>
+    
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -26,4 +26,8 @@ class MainActivity : AppCompatActivity(), KodeinAware {
         NavigationUI.setupActionBarWithNavController(this, navController)
 
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, null)
+    }
 }
