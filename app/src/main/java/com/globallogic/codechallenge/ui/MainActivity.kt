@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), KodeinAware {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         supportActionBar?.title = getString(R.string.tool_bar_main_title)
 
         navController = Navigation.findNavController(this, R.id.nav_main)

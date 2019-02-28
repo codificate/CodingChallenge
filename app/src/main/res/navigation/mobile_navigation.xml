@@ -7,14 +7,14 @@
     <fragment
             android:id="@+id/itemsListFragment"
             android:name="com.globallogic.codechallenge.ui.items.list.ItemListFragment"
-            android:label="items_list_fragment"
+            android:label="@string/tool_bar_main_title"
             tools:layout="@layout/items_list_fragment">
         <action android:id="@+id/actionDetail"
                 app:destination="@+id/detailItemFragment"/>
     </fragment>
     <fragment android:id="@+id/detailItemFragment"
               android:name="com.globallogic.codechallenge.ui.items.detail.DetailItemFragment"
-              android:label="item_detail"
+              android:label="@string/tool_bar_detail_title"
               tools:layout="@layout/item_detail">
         <argument
             android:name="itemValues"

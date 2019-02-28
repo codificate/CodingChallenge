@@ -29,7 +29,7 @@ class DetailItemFragment : Fragment() {
 
     private fun bindUI(item: ItemEntry) {
         (activity as AppCompatActivity)?.supportActionBar?.title = (activity as AppCompatActivity).getString(R.string.tool_bar_detail_title)
-        toolbarItem_detail_title.title = item.title
+        textView_content_title.text = item.title
         textView_content_description.text = item.description
         GlideApp
             .with(this)

@@ -12,8 +12,7 @@
             android:id="@+id/app_bar"
             android:fitsSystemWindows="true"
             android:layout_height="@dimen/app_bar_height"
-            android:layout_width="match_parent"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_width="match_parent">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:fitsSystemWindows="true"
@@ -21,18 +20,23 @@
                 android:layout_height="match_parent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbarItem_detail_title"
-                    android:layout_height="?attr/actionBarSize"
-                    android:layout_width="match_parent"
-                    app:layout_collapseMode="pin"
-                    app:popupTheme="@style/AppTheme.PopupOverlay"/>
             <ImageView
                     android:id="@+id/image_item_detail_collapsed"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     tools:background="@tools:sample/backgrounds/scenic[8]"/>
+
+            <TextView
+                    tools:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_content_title"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/gray"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="100dp"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
